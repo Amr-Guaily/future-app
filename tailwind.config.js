@@ -6,7 +6,21 @@ module.exports = {
     "./components/**/*.{js,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    container: {
+      center: true,
+      padding: '1rem',
+      screens: {
+        '2xl': "1280px"
+      }
+    },
+    extend: {
+      screens: {
+        'xs': '480px',
+      },
+      colors: {
+        'primary': '#215B8C',
+      },
+    },
   },
   plugins: [],
 }

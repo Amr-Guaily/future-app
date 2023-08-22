@@ -1,5 +1,11 @@
+import UpButton from './UpButton';
+
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <footer>
+      <UpButton />
+    </footer>
+  );
 };
 
 export default Footer;

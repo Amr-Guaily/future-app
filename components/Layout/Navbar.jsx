@@ -7,7 +7,7 @@ const Navbar = () => {
 
   console.log('NAVBAR [Re-rendered..]');
   return (
-    <div>
+    <nav className="flex items-center bg-primary">
       <ul className="flex gap-5">
         <Link href="/" passHref>
           <li>{t.home}</li>
@@ -18,7 +18,7 @@ const Navbar = () => {
         <li>{t.contact}</li>
       </ul>
       <SelectLanguage />
-    </div>
+    </nav>
   );
 };
 
