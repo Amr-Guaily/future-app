@@ -1,5 +1,14 @@
+import { useTranslate } from "../context/translate-api";
+
 export default function Home() {
+  const t = useTranslate();
+
+  console.log("HOME [Re-rendered..]");
   return (
-    <h1 className="text-red-500">Hello World..</h1>
+    <>
+      <div>
+        {t.heroHome}
+      </div>
+    </>
   );
 }
