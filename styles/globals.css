@@ -4,7 +4,6 @@
 
 :root {
   --color-primary: #215b8c;
-  --color-primary-reverse: #fff;
 }
 
 * {
@@ -36,6 +35,64 @@ body::-webkit-scrollbar-thumb {
   );
 }
 
+/* ## NAVBAR-CSS ## */
+nav.sticky-nav {
+  @apply sticky top-0 left-0 bg-white text-primary;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  animation: fadeInDown 0.4s ease-in-out;
+}
+.nav-link,
+.active-link {
+  @apply transition-all duration-200 block relative p-0.5;
+}
+.nav-link::before,
+.active-link::before {
+  @apply content-[''] absolute bottom-0 left-0 w-0 h-[1.5px] bg-secondary transition-all duration-300;
+}
+.nav-link:hover {
+  @apply text-secondary;
+}
+.nav-link:hover::before,
+.active-link::before {
+  @apply w-full;
+}
+.active-link {
+  @apply text-secondary;
+}
+.has-submenu:hover .sub-menu,
+.sub-menu:hover {
+  @apply pointer-events-auto translate-y-0 opacity-100;
+}
+.sub-menu {
+  @apply truncate absolute top-full -translate-y-full opacity-0 pointer-events-none bg-white text-primary rounded px-2.5 min-w-[calc(100%+10px)] text-base overflow-hidden shadow-md transition-all duration-300;
+}
+.sub-menu a {
+  @apply my-2.5;
+}
+.sub-menu::before {
+  @apply absolute content-[''] w-full h-0.5 bg-primary bottom-0 left-0;
+}
+.select-lang {
+  direction: ltr !important;
+  @apply text-lg bg-white text-primary rounded tracking-wide outline-none border-none px-1 font-semibold;
+}
+
+/* Sticky Social - CSS */
+.sticky-social {
+  @apply fixed bg-white flex flex-col z-[999] top-[10rem] ltr:rounded-r rtl:rounded-l shadow-md;
+}
+.sticky-social .social-item {
+  @apply text-[#527890] p-2.5 transition-all duration-100;
+}
+.sticky-social .social-item:hover {
+  @apply bg-[var(--hover-bg-color)] text-white;
+}
+.sticky-social a:hover {
+  @apply scale-x-150 ltr:rounded-r rtl:rounded-l;
+}
+.sticky-social a:hover > div {
+  @apply scale-x-[0.7] rounded-r;
+}
 .toTop {
   @apply z-[999] fixed right-[-60px] bottom-[35px] w-[47px] h-[47px] rounded-full flex justify-center items-center cursor-pointer transition-all duration-500;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -69,6 +126,17 @@ body::-webkit-scrollbar-thumb {
   }
   100% {
     bottom: 6px;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 

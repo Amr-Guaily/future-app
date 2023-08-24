@@ -13,7 +13,7 @@ const SelectLanguage = () => {
     <select
       onChange={changeLanguage}
       defaultValue={router.locale}
-      className="text-shadow-sm text-lg bg-transparent tracking-wide"
+      className="select-lang"
     >
       <option className="text-black" value="en">
         EN

@@ -1,35 +1,28 @@
 import React, { useRef } from 'react';
 import { useEffect } from 'react';
+import { throttle } from '../../utils/helepers.js';
 
 const UpButton = () => {
   const toTopBtnRef = useRef();
 
-  console.log('UP_BTN [Re-rendered..]');
+  useEffect(() => {
+    const scrollHandler = () => {
+      const toTopBtn = toTopBtnRef.current;
+      toTopBtn.classList.toggle('active', window.scrollY >= 300);
 
-  const throttle = (fn, delay = 100) => {
-    let lastTime = 0;
-    let id = 0;
-    return (...args) => {
-      const now = new Date().getTime();
-      id++;
-      if (now - lastTime < delay) return;
-      lastTime = now;
-      fn(...args);
+      let pos = document.documentElement.scrollTop,
+        scrollHeight = document.documentElement.scrollHeight,
+        clientHeight = document.documentElement.clientHeight,
+        calcHeight = scrollHeight - clientHeight,
+        scrollValue = Math.round((pos * 100) / calcHeight) + 5;
+
+      toTopBtn.style.background = `conic-gradient(var(--color-primary) ${scrollValue}%, #fff ${scrollValue}%)`;
     };
-  };
 
-  const scrollHandler = () => {
-    const toTopBtn = toTopBtnRef.current;
-    toTopBtn.classList.toggle('active', window.scrollY >= 300);
-    let pos = document.documentElement.scrollTop,
-      scrollHeight = document.documentElement.scrollHeight,
-      clientHeight = document.documentElement.clientHeight,
-      calcHeight = scrollHeight - clientHeight;
-    let scrollValue = Math.round((pos * 100) / calcHeight);
-    toTopBtn.style.background = `conic-gradient(var(--color-primary) ${
-      scrollValue + 5
-    }%, var(--color-primary-reverse) ${scrollValue + 5}%)`;
-  };
+    window.addEventListener('scroll', throttle(scrollHandler));
+
+    return () => window.removeEventListener('scroll', throttle(scrollHandler));
+  }, []);
 
   const toTopHandler = () => {
     window.scrollTo({
@@ -38,15 +31,7 @@ const UpButton = () => {
     });
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', throttle(scrollHandler));
-
-    return () => {
-      console.log('Cleaing');
-      window.removeEventListener('scroll', throttle(scrollHandler));
-    };
-  }, []);
-
+  console.log('UP_BTN [Re-rendered..]');
   return (
     <div ref={toTopBtnRef} className="toTop" onClick={toTopHandler}>
       <div className="bg-white">
