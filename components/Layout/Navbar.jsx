@@ -35,7 +35,7 @@ const Navbar = () => {
         </Link>
 
         {/* Nav-links */}
-        <div className="flex-1 flex gap-5 justify-center items-center font-semibold text-lg">
+        <div className="flex-1 flex gap-6 justify-center items-center font-semibold text-lg">
           <Link href="/" className={asPath == '/' ? 'active-link' : 'nav-link'}>
             {t.home}
           </Link>

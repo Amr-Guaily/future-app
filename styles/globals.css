@@ -12,6 +12,9 @@
   margin: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
 body::-webkit-scrollbar {
   width: 10px;
   background-color: #f5f5f5;
@@ -35,6 +38,14 @@ body::-webkit-scrollbar-thumb {
   );
 }
 
+/* Global Classes */
+.main-btn {
+  @apply px-5 py-2.5 my-4 bg-secondary text-white font-semibold transition-all duration-500 rounded;
+}
+.main-btn:hover {
+  @apply bg-white text-secondary;
+}
+
 /* ## NAVBAR-CSS ## */
 nav.sticky-nav {
   @apply sticky top-0 left-0 bg-white text-primary;
@@ -47,7 +58,7 @@ nav.sticky-nav {
 }
 .nav-link::before,
 .active-link::before {
-  @apply content-[''] absolute bottom-0 left-0 w-0 h-[1.5px] bg-secondary transition-all duration-300;
+  @apply content-[''] absolute bottom-0 rtl:right-0 ltr:left-0 w-0 h-[1.5px] bg-secondary transition-all duration-300;
 }
 .nav-link:hover {
   @apply text-secondary;
@@ -64,7 +75,7 @@ nav.sticky-nav {
   @apply pointer-events-auto translate-y-0 opacity-100;
 }
 .sub-menu {
-  @apply truncate absolute top-full -translate-y-full opacity-0 pointer-events-none bg-white text-primary rounded px-2.5 min-w-[calc(100%+10px)] text-base overflow-hidden shadow-md transition-all duration-300;
+  @apply truncate absolute top-full -translate-y-full opacity-0 pointer-events-none bg-white text-primary rounded px-2.5 min-w-[calc(100%+10px)] text-base overflow-hidden shadow-md transition-all duration-500;
 }
 .sub-menu a {
   @apply my-2.5;
@@ -77,9 +88,9 @@ nav.sticky-nav {
   @apply text-lg bg-white text-primary rounded tracking-wide outline-none border-none px-1 font-semibold;
 }
 
-/* Sticky Social - CSS */
+/* ## Sticky Social - CSS ## */
 .sticky-social {
-  @apply fixed bg-white flex flex-col z-[999] top-[10rem] ltr:rounded-r rtl:rounded-l shadow-md;
+  @apply fixed bg-white flex flex-col z-[999] top-[12rem] ltr:rounded-r rtl:rounded-l shadow-md;
 }
 .sticky-social .social-item {
   @apply text-[#527890] p-2.5 transition-all duration-100;
@@ -93,6 +104,16 @@ nav.sticky-nav {
 .sticky-social a:hover > div {
   @apply scale-x-[0.7] rounded-r;
 }
+
+/* ## Home page - CSS */
+.hero-text {
+  @apply hidden sm:block text-2xl lg:text-3xl font-bold tracking-wider pb-3 relative;
+}
+.hero-text::before {
+  @apply absolute content-[''] h-[3px] w-[35%] rounded left-1/2 -translate-x-1/2 bg-white bottom-0;
+}
+
+/*  */
 .toTop {
   @apply z-[999] fixed right-[-60px] bottom-[35px] w-[47px] h-[47px] rounded-full flex justify-center items-center cursor-pointer transition-all duration-500;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
