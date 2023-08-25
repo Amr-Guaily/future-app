@@ -5,9 +5,10 @@ import { useRouter } from 'next/router';
 
 import SelectLanguage from './SelectLanguage';
 import { FaAngleDown } from 'react-icons/fa';
+import { FiMenu } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ setIsActive }) => {
   const [isSticky, setIsSticky] = useState(false);
   const t = useTranslate();
   const { asPath } = useRouter();
@@ -28,14 +29,14 @@ const Navbar = () => {
     <nav
       className={`${isSticky && 'sticky-nav'} bg-primary text-white z-[999]`}
     >
-      <div className="container flex items-center gap-5 py-3">
+      <div className="container flex items-center justify-between gap-6 py-3">
         {/* Logo */}
         <Link href="/" passHref>
-          <Image src="/assets/logo-2.jpg" alt="Logo" width={150} height={50} />
+          <Image src="/assets/logo-2.jpg" alt="Logo" width={120} height={40} />
         </Link>
 
         {/* Nav-links */}
-        <div className="flex-1 flex gap-6 justify-center items-center font-semibold text-lg">
+        <div className="hidden flex-1 md:flex gap-6 justify-center items-center font-semibold text-lg">
           <Link href="/" className={asPath == '/' ? 'active-link' : 'nav-link'}>
             {t.home}
           </Link>
@@ -52,7 +53,7 @@ const Navbar = () => {
                 href="/about"
                 className={asPath == '/about' ? 'active-link' : 'nav-link'}
               >
-                {t.about}
+                {t.about}hknfss
               </Link>
               <Link
                 href="/about"
@@ -77,9 +78,15 @@ const Navbar = () => {
         </div>
 
         {/* Select Language */}
-        <div>
+        <div className="hidden md:block">
           <SelectLanguage />
         </div>
+
+        <FiMenu
+          size={30}
+          className="md:hidden cursor-pointer"
+          onClick={setIsActive}
+        />
       </div>
     </nav>
   );

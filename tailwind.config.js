@@ -14,6 +14,9 @@ module.exports = {
       }
     },
     extend: {
+      fontFamily: {
+        cairo: ['Cairo', 'sans-serif'],
+      },
       screens: {
         'xs': '480px',
       },

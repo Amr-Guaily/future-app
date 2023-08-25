@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600&family=Montserrat:wght@500;600&family=Old+Standard+TT:ital@1&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,6 +12,10 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html[dir='rtl'] {
+  font-family: 'Cairo', sans-serif;
 }
 
 body {
@@ -40,13 +46,13 @@ body::-webkit-scrollbar-thumb {
 
 /* Global Classes */
 .main-btn {
-  @apply px-5 py-2.5 my-4 bg-secondary text-white font-semibold transition-all duration-500 rounded;
+  @apply px-3 py-1.5 sm:px-5 sm:py-2.5 my-4 bg-secondary text-white font-semibold transition-all duration-500 rounded;
 }
 .main-btn:hover {
   @apply bg-white text-secondary;
 }
 
-/* ## NAVBAR-CSS ## */
+/* ## NAvbar - CSS ## */
 nav.sticky-nav {
   @apply sticky top-0 left-0 bg-white text-primary;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -88,9 +94,38 @@ nav.sticky-nav {
   @apply text-lg bg-white text-primary rounded tracking-wide outline-none border-none px-1 font-semibold;
 }
 
+/* ## Sidebar - CSS ## */
+.sidebar {
+  @apply fixed top-0 rtl:-left-full ltr:-right-full h-screen bg-stone-50 w-full max-w-[260px] sm:max-w-[280px] z-[999] py-5 transition-all duration-300;
+}
+.overlay {
+  @apply opacity-0 pointer-events-none transition-all duration-300 absolute top-0 w-full h-full bg-black/60 z-[999];
+}
+.nav-link-sidebar,
+.active-link-sidebar,
+.has-submenu-sidebar {
+  @apply transition-all duration-200 block p-4 border-b border-gray-300 relative;
+}
+.nav-link-sidebar:hover,
+.active-link-sidebar {
+  @apply text-secondary;
+}
+.active-link-sidebar::before {
+  @apply content-[''] top-1/2 -translate-y-1/2 absolute rtl:left-0 ltr:right-0 w-1 h-[calc(100%-2rem)] bg-secondary;
+}
+.sub-menu-sidebar {
+  @apply bg-transparent rounded text-base transition-all duration-500;
+}
+.sub-menu-sidebar a {
+  @apply border-none py-2;
+}
+.sub-menu-sidebar .active-link-sidebar::before {
+  @apply h-[calc(100%-1rem)];
+}
+
 /* ## Sticky Social - CSS ## */
 .sticky-social {
-  @apply fixed bg-white flex flex-col z-[999] top-[12rem] ltr:rounded-r rtl:rounded-l shadow-md;
+  @apply fixed bg-white flex flex-col z-[9999] top-[11rem] ltr:rounded-r rtl:rounded-l shadow-md;
 }
 .sticky-social .social-item {
   @apply text-[#527890] p-2.5 transition-all duration-100;
