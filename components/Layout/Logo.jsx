@@ -11,6 +11,7 @@ const Logo = () => {
         width={120}
         height={40}
         style={{
+          maxWidth: '150px',
           width: '100%',
           height: 'auto',
         }}

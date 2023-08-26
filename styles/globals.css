@@ -64,7 +64,7 @@ nav.sticky-nav {
 }
 .nav-link::before,
 .active-link::before {
-  @apply content-[''] absolute bottom-0 rtl:right-0 ltr:left-0 w-0 h-[1.5px] bg-secondary transition-all duration-300;
+  @apply content-[''] absolute bottom-0 start-0 w-0 h-[1.5px] bg-secondary transition-all duration-300;
 }
 .nav-link:hover {
   @apply text-secondary;
@@ -111,7 +111,7 @@ nav.sticky-nav {
   @apply text-secondary;
 }
 .active-link-sidebar::before {
-  @apply content-[''] top-1/2 -translate-y-1/2 absolute rtl:left-0 ltr:right-0 w-1 h-[calc(100%-2rem)] bg-secondary;
+  @apply content-[''] top-1/2 -translate-y-1/2 absolute end-0 w-1 h-[calc(100%-2rem)] bg-secondary;
 }
 .sub-menu-sidebar {
   @apply bg-transparent rounded text-base transition-all duration-500;
@@ -125,7 +125,7 @@ nav.sticky-nav {
 
 /* ## Sticky Social - CSS ## */
 .sticky-social {
-  @apply fixed bg-white flex flex-col z-[9999] top-[11rem] ltr:rounded-r rtl:rounded-l shadow-md;
+  @apply fixed bg-white hidden lg:flex flex-col z-[9999] top-[11rem] rounded-e shadow-md;
 }
 .sticky-social .social-item {
   @apply text-[#527890] p-2.5 transition-all duration-100;
@@ -134,10 +134,24 @@ nav.sticky-nav {
   @apply bg-[var(--hover-bg-color)] text-white;
 }
 .sticky-social a:hover {
-  @apply scale-x-150 ltr:rounded-r rtl:rounded-l;
+  @apply scale-x-150 rounded-e;
 }
 .sticky-social a:hover > div {
   @apply scale-x-[0.7] rounded-r;
+}
+
+/* Footer - CSS */
+.quick-link {
+  @apply hover:ps-3 transition-all duration-200 w-fit;
+}
+.footer-title {
+  @apply text-secondary font-semibold text-xl mb-3 tracking-wider;
+}
+.quick-link svg {
+  @apply me-3 rtl:rotate-180 inline-block text-secondary;
+}
+.social-links-footer {
+  @apply bg-secondary text-white rounded-full p-2 hover:bg-white hover:text-secondary transition-all duration-300;
 }
 
 /* ## Home page - CSS */
