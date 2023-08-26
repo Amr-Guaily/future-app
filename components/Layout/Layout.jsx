@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   const [isActiveSidebar, setIsActiveSidebar] = useState(false);
 
   const activeSidebarHanlder = useCallback(() => {
-    setIsActiveSidebar(!isActiveSidebar);
+    setIsActiveSidebar((prevState) => !prevState);
   }, []);
 
   console.log('Layout [Re-rendered..]');
@@ -25,7 +25,6 @@ const Layout = ({ children }) => {
         } overlay`}
         onClick={activeSidebarHanlder}
       ></div>
-
       <div
         className={`${isActiveSidebar && 'ltr:!right-0 rtl:!left-0'} sidebar`}
       >
@@ -33,6 +32,7 @@ const Layout = ({ children }) => {
       </div>
 
       <main className="flex-1 min-h-[2000px]">{children}</main>
+
       <Footer />
     </div>
   );

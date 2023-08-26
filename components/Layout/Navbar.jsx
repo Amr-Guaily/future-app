@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import { useTranslate } from '../../context/translate-api';
 import { useRouter } from 'next/router';
 
@@ -7,6 +7,7 @@ import SelectLanguage from './SelectLanguage';
 import { FaAngleDown } from 'react-icons/fa';
 import { FiMenu } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
+import React from 'react';
 
 const Navbar = ({ setIsActive }) => {
   const [isSticky, setIsSticky] = useState(false);
@@ -32,7 +33,17 @@ const Navbar = ({ setIsActive }) => {
       <div className="container flex items-center justify-between gap-6 py-3">
         {/* Logo */}
         <Link href="/" passHref>
-          <Image src="/assets/logo-2.jpg" alt="Logo" width={120} height={40} />
+          <Image
+            src="/assets/logo-2.jpg"
+            alt="Logo"
+            priority={true}
+            width={120}
+            height={40}
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
+          />
         </Link>
 
         {/* Nav-links */}
@@ -53,7 +64,7 @@ const Navbar = ({ setIsActive }) => {
                 href="/about"
                 className={asPath == '/about' ? 'active-link' : 'nav-link'}
               >
-                {t.about}hknfss
+                {t.about}
               </Link>
               <Link
                 href="/about"
@@ -78,9 +89,7 @@ const Navbar = ({ setIsActive }) => {
         </div>
 
         {/* Select Language */}
-        <div className="hidden md:block">
-          <SelectLanguage />
-        </div>
+        <SelectLanguage />
 
         <FiMenu
           size={30}
@@ -92,4 +101,4 @@ const Navbar = ({ setIsActive }) => {
   );
 };
 
-export default Navbar;
+export default React.memo(Navbar);

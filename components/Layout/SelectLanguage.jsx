@@ -9,11 +9,12 @@ const SelectLanguage = () => {
     router.push(router.pathname, router.asPath, { locale });
   };
 
+  console.log('SELECTLANG [Re-rendered..]');
   return (
     <select
       onChange={changeLanguage}
       defaultValue={router.locale}
-      className="select-lang"
+      className="select-lang hidden md:block"
     >
       <option className="text-black" value="en">
         EN

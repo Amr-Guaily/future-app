@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { useEffect } from 'react';
 import { throttle } from '../../utils/helepers.js';
 
@@ -52,4 +52,4 @@ const UpButton = () => {
   );
 };
 
-export default React.memo(UpButton);
+export default UpButton;

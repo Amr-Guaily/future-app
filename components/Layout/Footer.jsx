@@ -1,8 +1,10 @@
 import UpButton from './UpButton';
 import Link from 'next/link';
 import { useTranslate } from '../../context/translate-api';
+import React from 'react';
 
 const Footer = () => {
+  console.log('Footer [Re-rendered..]');
   const t = useTranslate();
   return (
     <footer>
@@ -23,4 +25,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default React.memo(Footer);
