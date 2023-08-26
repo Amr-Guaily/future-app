@@ -9,10 +9,11 @@ import QuickLinks from './QuickLinks';
 import NewsLetter from './NewsLetter';
 
 const Footer = () => {
-  console.log('Footer [Re-rendered..]');
   const t = useTranslate();
+
+  console.log('Footer [Re-rendered..]');
   return (
-    <footer className="mt-[4rem]">
+    <footer className="mt-[2rem] md:mt-[4rem]">
       <UpButton />
 
       <div className="bg-[#202e31] text-white py-12">

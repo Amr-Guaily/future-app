@@ -1,12 +1,16 @@
 import Link from "next/link";
-import { useTranslate } from "../context/translate-api";
 import Image from "next/image";
+import { useTranslate } from "../context/translate-api";
+import AboutUS from "../components/Home/AboutUS";
+
+
 
 export default function Home() {
   const t = useTranslate();
 
   console.log("HOME [Re-rendered..]");
   return <>
+    {/* Landing-banner */}
     <div className="hero-banner relative">
       <div className="absolute w-full h-full bg-black/40 flex flex-col justify-center items-center text-white">
         <h5 className="hero-text">FUTURE CONSTRUCTION</h5>
@@ -25,5 +29,8 @@ export default function Home() {
           height: "auto"
         }} />
     </div>
+
+    {/* section-1 */}
+    <AboutUS />
   </>;
 }
