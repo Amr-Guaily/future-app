@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
   console.log('Layout [Re-rendered..]');
   return (
     <div className="min-h-screen flex flex-col relative">
-      <Navbar setIsActive={activeSidebarHanlder} />
+      <Navbar activeSidebar={activeSidebarHanlder} />
 
       <StickySocial />
 

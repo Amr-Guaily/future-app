@@ -1,17 +1,15 @@
 import React from 'react';
-import Link from 'next/link';
+import { useState } from 'react';
+import { useTranslate } from '../../context/translate-api';
+
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { FaAngleDown } from 'react-icons/fa';
-
-import { useTranslate } from '../../context/translate-api';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
 import SelectLanguage2 from './SelectLanguage2';
+import Navlink from './Navlink';
 
 const Sidebar = ({ setIsActive }) => {
   const [isActiveSubmenu, setIsActiveSubmenu] = useState(false);
   const t = useTranslate();
-  const { asPath } = useRouter();
 
   console.log('SIDEBAR [Re-rendered..]');
   return (
@@ -24,20 +22,20 @@ const Sidebar = ({ setIsActive }) => {
 
       {/* Nav-links */}
       <div className="flex flex-col font-semibold text-lg">
-        <Link
+        <Navlink
           href="/"
-          className={asPath == '/' ? 'active-link-sidebar' : 'nav-link-sidebar'}
+          activeClass="active-link-sidebar"
+          normalClass="nav-link-sidebar"
         >
           {t.home}
-        </Link>
-        <Link
+        </Navlink>
+        <Navlink
           href="/about"
-          className={
-            asPath == '/about' ? 'active-link-sidebar' : 'nav-link-sidebar'
-          }
+          activeClass="active-link-sidebar"
+          normalClass="nav-link-sidebar"
         >
           {t.about}
-        </Link>
+        </Navlink>
         <div className="has-submenu-sidebar cursor-pointer relative">
           <div
             className="flex justify-between items-center mb-2.5"
@@ -50,47 +48,37 @@ const Sidebar = ({ setIsActive }) => {
           </div>
           {isActiveSubmenu && (
             <div className="sub-menu-sidebar">
-              <Link
+              <Navlink
                 href="/about"
-                className={
-                  asPath == '/about'
-                    ? 'active-link-sidebar'
-                    : 'nav-link-sidebar'
-                }
+                activeClass="active-link-sidebar"
+                normalClass="nav-link-sidebar"
               >
                 {t.about}
-              </Link>
-              <Link
+              </Navlink>
+              <Navlink
                 href="/about"
-                className={
-                  asPath == '/about'
-                    ? 'active-link-sidebar'
-                    : 'nav-link-sidebar'
-                }
+                activeClass="active-link-sidebar"
+                normalClass="nav-link-sidebar"
               >
                 {t.about}
-              </Link>
-              <Link
+              </Navlink>
+              <Navlink
                 href="/about"
-                className={
-                  asPath == '/about'
-                    ? 'active-link-sidebar'
-                    : 'nav-link-sidebar'
-                }
+                activeClass="active-link-sidebar"
+                normalClass="nav-link-sidebar"
               >
                 {t.about}
-              </Link>
+              </Navlink>
             </div>
           )}
         </div>
-        <Link
+        <Navlink
           href="/contacts"
-          className={
-            asPath == '/contacts' ? 'active-link-sidebar' : 'nav-link-sidebar'
-          }
+          activeClass="active-link-sidebar"
+          normalClass="nav-link-sidebar"
         >
           {t.contact}
-        </Link>
+        </Navlink>
       </div>
 
       {/* Select Language */}

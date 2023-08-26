@@ -1,18 +1,17 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import React from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslate } from '../../context/translate-api';
-import { useRouter } from 'next/router';
 
-import SelectLanguage from './SelectLanguage';
 import { FaAngleDown } from 'react-icons/fa';
 import { FiMenu } from 'react-icons/fi';
-import { useEffect, useState } from 'react';
-import React from 'react';
 
-const Navbar = ({ setIsActive }) => {
+import SelectLanguage from './SelectLanguage';
+import Navlink from './Navlink';
+import Logo from './Logo';
+
+const Navbar = ({ activeSidebar }) => {
   const [isSticky, setIsSticky] = useState(false);
   const t = useTranslate();
-  const { asPath } = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,61 +30,55 @@ const Navbar = ({ setIsActive }) => {
       className={`${isSticky && 'sticky-nav'} bg-primary text-white z-[999]`}
     >
       <div className="container flex items-center justify-between gap-6 py-3">
-        {/* Logo */}
-        <Link href="/" passHref>
-          <Image
-            src="/assets/logo-2.jpg"
-            alt="Logo"
-            priority={true}
-            width={120}
-            height={40}
-            style={{
-              width: '100%',
-              height: 'auto',
-            }}
-          />
-        </Link>
+        <Logo />
 
         {/* Nav-links */}
         <div className="hidden flex-1 md:flex gap-6 justify-center items-center font-semibold text-lg">
-          <Link href="/" className={asPath == '/' ? 'active-link' : 'nav-link'}>
+          <Navlink href="/" activeClass="active-link" normalClass="nav-link">
             {t.home}
-          </Link>
-          <Link
+          </Navlink>
+
+          <Navlink
             href="/about"
-            className={asPath == '/about' ? 'active-link' : 'nav-link'}
+            activeClass="active-link"
+            normalClass="nav-link"
           >
             {t.about}
-          </Link>
+          </Navlink>
+
           <div className="has-submenu cursor-pointer relative py-2.5">
             {t.services} <FaAngleDown className=" inline-block" />
             <div className="sub-menu">
-              <Link
+              <Navlink
                 href="/about"
-                className={asPath == '/about' ? 'active-link' : 'nav-link'}
+                activeClass="active-link"
+                normalClass="nav-link"
               >
                 {t.about}
-              </Link>
-              <Link
+              </Navlink>
+              <Navlink
                 href="/about"
-                className={asPath == '/about' ? 'active-link' : 'nav-link'}
+                activeClass="active-link"
+                normalClass="nav-link"
               >
                 {t.about}
-              </Link>
-              <Link
+              </Navlink>
+              <Navlink
                 href="/about"
-                className={asPath == '/about' ? 'active-link' : 'nav-link'}
+                activeClass="active-link"
+                normalClass="nav-link"
               >
                 {t.about}
-              </Link>
+              </Navlink>
             </div>
           </div>
-          <Link
+          <Navlink
             href="/contacts"
-            className={asPath == '/contacts' ? 'active-link' : 'nav-link'}
+            activeClass="active-link"
+            normalClass="nav-link"
           >
             {t.contact}
-          </Link>
+          </Navlink>
         </div>
 
         {/* Select Language */}
@@ -94,7 +87,7 @@ const Navbar = ({ setIsActive }) => {
         <FiMenu
           size={30}
           className="md:hidden cursor-pointer"
-          onClick={setIsActive}
+          onClick={activeSidebar}
         />
       </div>
     </nav>
