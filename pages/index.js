@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslate } from "../context/translate-api";
+
 import AboutUS from "../components/Home/AboutUS";
-
-
+import Statistics from "../components/Home/Statistics";
 
 export default function Home() {
   const t = useTranslate();
@@ -24,13 +24,17 @@ export default function Home() {
         width={600}
         height={600}
         sizes="100vw"
+        priority={true}
         style={{
           width: "100%",
           height: "auto"
         }} />
     </div>
 
-    {/* section-1 */}
+    {/* Section-1 */}
     <AboutUS />
+
+    {/* Section-2 */}
+    <Statistics />
   </>;
 }

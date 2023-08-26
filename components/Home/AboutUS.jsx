@@ -1,11 +1,13 @@
 import Link from 'next/link';
+import React from 'react';
 import Image from 'next/image';
 import { BsLightningFill } from 'react-icons/bs';
 
 const AboutUS = () => {
+  console.log('About-us [Re-render]');
   return (
     <div className="s-block flex flex-col-reverse md:flex-row gap-6 lg:gap-10">
-      <div className="flex flex-col sm:w-[55%] px-3">
+      <div className="flex flex-col md:w-[55%] px-3">
         <span className="text-secondary font-bold text-lg lg:text-xl mb-2">
           About us
         </span>
@@ -90,4 +92,4 @@ const AboutUS = () => {
   );
 };
 
-export default AboutUS;
+export default React.memo(AboutUS);
