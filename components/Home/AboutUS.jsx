@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { BsLightningFill } from 'react-icons/bs';
 
-const AboutUS = () => {
+const AboutUs = () => {
   console.log('About-us [Re-render]');
   return (
     <div className="s-block flex flex-col-reverse md:flex-row gap-6 lg:gap-10">
@@ -92,4 +92,4 @@ const AboutUS = () => {
   );
 };
 
-export default React.memo(AboutUS);
+export default React.memo(AboutUs);
