@@ -8,13 +8,13 @@ const AboutUs = () => {
   return (
     <div className="s-block flex flex-col-reverse md:flex-row gap-6 lg:gap-10">
       <div className="flex flex-col md:w-[55%] px-3">
-        <span className="text-secondary font-bold text-lg lg:text-xl mb-2">
+        <span className="text-secondary font-bold text-lg lg:text-xl">
           About us
         </span>
-        <h3 className="text-primary text-2xl lg:text-4xl font-bold">
+        <h3 className="text-primary text-2xl lg:text-4xl font-bold mt-3">
           Bringing light to your home, one wire at a time.
         </h3>
-        <p className="text-slate-700 mt-3 tracking-wider text-sm">
+        <p className="text-slate-700 mt-4 tracking-wider text-sm">
           Void gathering midst together you're shall. Beast set he likeness
           spirit winged two all fourth they're gathered seasons very may heaven
           saying.

@@ -139,7 +139,7 @@ nav {
 
 /* ## Sticky Social - CSS ## */
 .sticky-social {
-  @apply absolute bg-white hidden lg:flex flex-col z-20 top-[12rem] rounded-e shadow-md;
+  @apply absolute xl:fixed bg-white hidden lg:flex flex-col z-20 top-[12rem] rounded-e shadow-md;
 }
 .sticky-social .social-item {
   @apply text-[#527890] p-2.5 transition-all duration-100;
@@ -167,6 +167,22 @@ nav {
 .social-links-footer {
   @apply bg-secondary text-white rounded-full p-2 hover:bg-white hover:text-secondary transition-all duration-300;
 }
+.toTop {
+  @apply z-[999] fixed right-[-60px] bottom-[35px] w-[47px] h-[47px] rounded-full flex justify-center items-center cursor-pointer transition-all duration-500;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.toTop > div {
+  @apply relative w-[calc(100%-10px)] h-[calc(100%-10px)] bg-white rounded-full flex justify-center items-center;
+}
+.toTop svg {
+  @apply absolute;
+}
+.toTop > div svg:hover {
+  @apply ready;
+}
+.toTop.active {
+  @apply right-[25px];
+}
 
 /* ## Home page - CSS */
 .hero-text {
@@ -190,23 +206,33 @@ li.feature-li {
 .statistics-item p {
   @apply text-gray-600 font-semibold text-xs md:text-base;
 }
-
-/*  */
-.toTop {
-  @apply z-[999] fixed right-[-60px] bottom-[35px] w-[47px] h-[47px] rounded-full flex justify-center items-center cursor-pointer transition-all duration-500;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+.contact-li {
+  @apply flex items-center gap-3 text-slate-900 font-semibold my-4 text-base;
 }
-.toTop > div {
-  @apply relative w-[calc(100%-10px)] h-[calc(100%-10px)] bg-white rounded-full flex justify-center items-center;
+.contact-li svg {
+  @apply inline-block text-secondary;
 }
-.toTop svg {
-  @apply absolute;
+.map iframe {
+  height: 200px;
+  filter: brightness(100%) contrast(100%) saturate(0%) blur(0px)
+    hue-rotate(0deg);
+  transition-duration: 0.5s;
 }
-.toTop > div svg:hover {
-  @apply ready;
+.map:hover iframe {
+  filter: brightness(100%) contrast(100%) saturate(100%) blur(0px)
+    hue-rotate(0deg);
 }
-.toTop.active {
-  @apply right-[25px];
+.contact-form {
+  @apply my-6 grid grid-cols-1 lg:grid-cols-2 gap-5;
+}
+.contact-form textarea {
+  @apply lg:col-span-2;
+}
+.contact-form select option {
+  @apply text-gray-500;
+}
+.contact-form .input-field {
+  @apply px-3 py-2 rounded text-slate-800 border border-stone-500 focus:rounded-none focus:outline-secondary;
 }
 
 /* Animtion */
