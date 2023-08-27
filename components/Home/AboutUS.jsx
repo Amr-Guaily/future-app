@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import React from 'react';
 import Image from 'next/image';
+
 import { BsLightningFill } from 'react-icons/bs';
 
 const AboutUs = () => {
@@ -92,4 +92,4 @@ const AboutUs = () => {
   );
 };
 
-export default React.memo(AboutUs);
+export default AboutUs;

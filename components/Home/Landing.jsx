@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const Landing = () => {
+  console.log('Landing [Re-rendered]');
   return (
     <div className="hero-banner relative">
       <div className="absolute w-full h-full bg-black/40 flex flex-col justify-center items-center text-white">

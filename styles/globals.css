@@ -223,7 +223,7 @@ li.feature-li {
     hue-rotate(0deg);
 }
 .contact-form {
-  @apply my-6 grid grid-cols-1 lg:grid-cols-2 gap-5;
+  @apply mt-6 pb-8 grid grid-cols-1 lg:grid-cols-2 gap-5 relative;
 }
 .contact-form textarea {
   @apply lg:col-span-2;
@@ -233,6 +233,9 @@ li.feature-li {
 }
 .contact-form .input-field {
   @apply px-3 py-2 rounded text-slate-800 border border-stone-500 focus:rounded-none focus:outline-secondary;
+}
+.contact-form .submit-btn {
+  @apply flex items-center justify-center gap-2.5 !my-0 w-full border-[2px] border-secondary;
 }
 
 /* Animtion */
