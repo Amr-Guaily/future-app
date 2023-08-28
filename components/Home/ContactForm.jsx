@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
+import { useTranslate } from '../../context/translate-api';
 
 import emailjs from '@emailjs/browser';
 import AOSWrapper from '../AOSWrapper';
 
 const ContactForm = () => {
+  const t = useTranslate();
   const form = useRef();
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState({
@@ -35,20 +37,20 @@ const ContactForm = () => {
       .then(
         () => {
           setMessage({
-            value: "Thanks, We'll response to you as soon as possible",
+            value: t.contactUs.success,
             type: 'success',
           });
           setIsLoading(false);
           form.current[0].value = '';
           form.current[1].value = '';
           form.current[2].value = '';
-          form.current[3].value = '-- Project Type --';
+          form.current[3].value = t.contactUs.formService;
           form.current[4].value = '';
         },
         () => {
           setIsLoading(false);
           setMessage({
-            value: 'Something went rong, please tray again later...',
+            value: t.contactUs.error,
             type: 'error',
           });
         }
@@ -59,7 +61,7 @@ const ContactForm = () => {
 
   return (
     <AOSWrapper>
-      <div data-aos="fade-left" className="md:w-1/2">
+      <div data-aos={`fade-${t.aos}`} className="md:w-1/2">
         <div className="flex items-center gap-3">
           <div className="bg-secondary py-0.5 pl-0.5">
             <Image
@@ -71,7 +73,7 @@ const ContactForm = () => {
             />
           </div>
           <span className="font-bold text-lg text-slate-900 leading-5">
-            Write us a few words about your project.
+            {t.contactUs.formTitle}
           </span>
         </div>
 
@@ -79,7 +81,7 @@ const ContactForm = () => {
           <input
             className="input-field"
             type="text"
-            placeholder="Name"
+            placeholder={t.contactUs.formName}
             required
             maxLength={30}
             name="name"
@@ -87,20 +89,20 @@ const ContactForm = () => {
           <input
             className="input-field"
             type="email"
-            placeholder="Email"
+            placeholder={t.contactUs.formEmail}
             required
             name="email"
           />
           <input
             className="input-field"
             type="tel"
-            placeholder="Your Phone"
+            placeholder={t.contactUs.formPhone}
             name="phone"
           />
 
           <select className="input-field" name="project_type">
             <option selected disabled hidden>
-              -- Project Type --
+              {t.contactUs.formService}
             </option>
             <option value="Electrical Maintenance">
               Electrical Maintenance
@@ -117,7 +119,7 @@ const ContactForm = () => {
             rows={6}
             required
             name="message"
-            placeholder="Write your message here"
+            placeholder={t.contactUs.formMessage}
           />
           <button
             disabled={isLoading}
@@ -147,7 +149,7 @@ const ContactForm = () => {
                 ></path>
               </svg>
             )}
-            <span className="block mb-0.5"> Send a Message</span>
+            <span className="block mb-0.5">{t.contactUs.submit}</span>
           </button>
 
           {message.value && (

@@ -47,28 +47,28 @@ const Navbar = ({ activeSidebar }) => {
           </Navlink>
 
           <div className="has-submenu cursor-pointer relative py-2.5">
-            {t.services} <FaAngleDown className=" inline-block" />
+            {t.services.title} <FaAngleDown className=" inline-block" />
             <div className="sub-menu">
               <Navlink
-                href="/about"
+                href="#"
                 activeClass="active-link"
                 normalClass="nav-link"
               >
-                {t.about}
+                {t.services.service_1}
               </Navlink>
               <Navlink
-                href="/about"
+                href="#"
                 activeClass="active-link"
                 normalClass="nav-link"
               >
-                {t.about}
+                {t.services.service_2}
               </Navlink>
               <Navlink
-                href="/about"
+                href="#"
                 activeClass="active-link"
                 normalClass="nav-link"
               >
-                {t.about}
+                {t.services.service_3}
               </Navlink>
             </div>
           </div>

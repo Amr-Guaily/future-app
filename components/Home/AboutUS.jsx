@@ -1,85 +1,90 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslate } from '../../context/translate-api';
 
 import { BsLightningFill } from 'react-icons/bs';
 import AOSWrapper from '../AOSWrapper';
 
 const AboutUs = () => {
+  const t = useTranslate();
   console.log('About-us [Re-render]');
   return (
     <div className="s-block flex flex-col-reverse md:flex-row gap-6 lg:gap-10">
       <AOSWrapper>
         <div data-aos="fade-right" className="flex flex-col md:w-[55%] px-3">
           <span className="text-secondary font-bold text-lg lg:text-xl">
-            About us
+            {t.aboutUS.h1}
           </span>
           <h3 className="text-primary text-2xl lg:text-4xl font-bold mt-3">
-            Bringing light to your home, one wire at a time.
+            {t.aboutUS.h2}
           </h3>
           <p className="text-slate-700 mt-4 tracking-wider text-sm">
-            Void gathering midst together you're shall. Beast set he likeness
-            spirit winged two all fourth they're gathered seasons very may
-            heaven saying.
+            {t.aboutUS.h3}
           </p>
           <ul className="my-5">
             <li className="feature-li">
-              <BsLightningFill size={18} className="light-icon" /> Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit.
+              <BsLightningFill size={18} className="light-icon" />
+              {t.features.f1}
             </li>
             <li className="feature-li">
-              <BsLightningFill size={18} className="light-icon" /> Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit.
+              <BsLightningFill size={18} className="light-icon" />
+              {t.features.f2}
             </li>
             <li className="feature-li">
-              <BsLightningFill size={18} className="light-icon" /> Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit.
+              <BsLightningFill size={18} className="light-icon" />
+              {t.features.f3}
             </li>
           </ul>
 
           <div className="hidden lg:flex flex-row items-center gap-8 mt-4 mb-8">
-            <div className="flex gap-3">
-              <Image
-                src="/assets/svg/our-team.png"
-                width={60}
-                height={30}
-                alt="svg-icon"
-                className="shrink-0 object-contain"
-              />
-              <div>
-                <span className="text-secondary text-lg font-bold">
-                  Professional Team
-                </span>
-                <p className="text-slate-700 mt-1 tracking-wider text-sm p-3-line">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                  elit tellus, luctus nec ullamcorper mattis.
-                </p>
+            <AOSWrapper>
+              <div data-aos="zoom-in" className="flex gap-3">
+                <Image
+                  src="/assets/svg/our-team.png"
+                  width={60}
+                  height={30}
+                  alt="svg-icon"
+                  className="shrink-0 object-contain"
+                />
+                <div>
+                  <span className="text-secondary text-lg font-bold">
+                    Professional Team
+                  </span>
+                  <p className="text-slate-700 mt-1 tracking-wider text-sm p-3-line">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    elit tellus, luctus nec ullamcorper mattis.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="flex gap-3">
-              <Image
-                src="/assets/svg/quick-response.png"
-                width={60}
-                height={30}
-                alt="svg-icon"
-                className="shrink-0 object-contain"
-              />
-              <div>
-                <span className="text-secondary text-lg font-bold">
-                  Professional Team
-                </span>
-                <p className="text-slate-700 mt-1 tracking-wider text-sm p-3-line">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                  elit tellus, luctus nec ullamcorper mattis.
-                </p>
+            </AOSWrapper>
+
+            <AOSWrapper>
+              <div data-aos="zoom-in" className="flex gap-3">
+                <Image
+                  src="/assets/svg/quick-response.png"
+                  width={60}
+                  height={30}
+                  alt="svg-icon"
+                  className="shrink-0 object-contain"
+                />
+                <div>
+                  <span className="text-secondary text-lg font-bold">
+                    Professional Team
+                  </span>
+                  <p className="text-slate-700 mt-1 tracking-wider text-sm p-3-line">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    elit tellus, luctus nec ullamcorper mattis.
+                  </p>
+                </div>
               </div>
-            </div>
+            </AOSWrapper>
           </div>
 
           <Link
             href="/about"
             className="main-btn w-fit border-[2px] !py-1.5 !px-6 !mt-0 border-secondary"
           >
-            learn more
+            {t.readMore}
           </Link>
         </div>
       </AOSWrapper>

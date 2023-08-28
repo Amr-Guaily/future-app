@@ -7,6 +7,7 @@ const AOSWrapper = ({ children }) => {
     Aos.init({
       duration: 800,
       easing: 'ease',
+      once: true,
     });
   }, []);
 

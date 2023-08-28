@@ -29,7 +29,7 @@ const Footer = () => {
           <QuickLinks />
 
           <div className="lg:-ms-8 lg:pe-8">
-            <h3 className="footer-title">GET IN TOUCH</h3>
+            <h3 className="footer-title">{t.footer.contact}</h3>
             <p className="text-sm mt-3 text-justify">
               Any questions? Let us know in store at 8th floor, 379 Hudson St,
               New York, NY 10018 or call us on (+1) 96 716 6879.
@@ -54,14 +54,14 @@ const Footer = () => {
       </div>
 
       <p className="text-white font-semibold text-sm px-2 bg-black/90 py-2 lg:whitespace-nowrap text-center">
-        {t.copyRight}
+        {t.footer.copyRight}
         <Link
           href="https://valinteca.com/"
           target="_blank"
           rel="noreferrer"
           className="text-base xl:text-lg font-semibold text-secondary underline mx-2"
         >
-          {t.development}
+          {t.footer.development}
         </Link>
       </p>
     </footer>

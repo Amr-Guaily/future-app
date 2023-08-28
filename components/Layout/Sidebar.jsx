@@ -41,7 +41,7 @@ const Sidebar = ({ setIsActive }) => {
             className="flex justify-between items-center mb-2.5"
             onClick={() => setIsActiveSubmenu(!isActiveSubmenu)}
           >
-            {t.services}
+            {t.services.title}
             <FaAngleDown
               className={`${isActiveSubmenu && 'rotate-180'} inline-block`}
             />
@@ -49,25 +49,25 @@ const Sidebar = ({ setIsActive }) => {
           {isActiveSubmenu && (
             <div className="sub-menu-sidebar">
               <Navlink
-                href="/about"
+                href="#"
                 activeClass="active-link-sidebar"
                 normalClass="nav-link-sidebar"
               >
-                {t.about}
+                {t.services.service_1}
               </Navlink>
               <Navlink
-                href="/about"
+                href="#"
                 activeClass="active-link-sidebar"
                 normalClass="nav-link-sidebar"
               >
-                {t.about}
+                {t.services.service_2}
               </Navlink>
               <Navlink
-                href="/about"
+                href="#"
                 activeClass="active-link-sidebar"
                 normalClass="nav-link-sidebar"
               >
-                {t.about}
+                {t.services.service_3}
               </Navlink>
             </div>
           )}

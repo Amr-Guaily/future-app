@@ -187,7 +187,7 @@ nav {
 
 /* ## Home page - CSS */
 .hero-text {
-  @apply hidden sm:block text-2xl lg:text-3xl font-bold tracking-wider pb-3 relative;
+  @apply hidden sm:block text-2xl lg:text-3xl font-bold tracking-wide pb-3 relative;
 }
 .hero-text::before {
   @apply absolute content-[''] h-[3px] w-[35%] rounded left-1/2 -translate-x-1/2 bg-white bottom-0;
@@ -202,7 +202,7 @@ li.feature-li {
   background-image: url(/assets/bg.jpg);
 }
 .statistics-item span {
-  @apply text-2xl md:text-3xl font-bold text-secondary tracking-wider;
+  @apply text-2xl md:text-3xl font-bold text-secondary tracking-wide;
 }
 .statistics-item p {
   @apply text-gray-600 font-semibold text-xs md:text-base;
@@ -235,6 +235,12 @@ li.feature-li {
 .contact-form .input-field {
   @apply px-3 py-2 rounded text-slate-800 border border-stone-500 focus:rounded-none focus:outline-secondary;
 }
+/* .input-field[name='email'],
+.input-field[name='phone'],
+select.input-field {
+  direction: ltr !important;
+} */
+
 .contact-form .submit-btn {
   @apply flex items-center justify-center gap-2.5 !my-0 w-full border-[2px] border-secondary;
 }

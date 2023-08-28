@@ -1,22 +1,23 @@
+import { useTranslate } from '../../context/translate-api';
 import ContactForm from './ContactForm';
 import { MdLocationOn, MdEmail } from 'react-icons/md';
 import { BsTelephoneFill } from 'react-icons/bs';
 import AOSWrapper from '../AOSWrapper';
 
 const ContactUs = () => {
+  const t = useTranslate();
   return (
     <div className="s-block flex gap-8 md:gap-12 flex-col md:flex-row">
       <AOSWrapper>
         <div data-aos="fade-up" className="md:w-1/2">
           <span className="text-secondary font-bold text-lg lg:text-xl">
-            Contact US!
+            {t.contactUs.h1}
           </span>
           <h3 className="text-primary text-2xl lg:text-4xl font-bold mt-3">
-            Power up your life with our electrical expertise!
+            {t.contactUs.h2}
           </h3>
           <p className="text-slate-700 mt-4 tracking-wider text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            {t.contactUs.h3}
           </p>
 
           <ul className="my-8">
