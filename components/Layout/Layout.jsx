@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
         <Sidebar setIsActive={activeSidebarHanlder} />
       </div>
 
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 overflow-hidden">{children}</main>
 
       <Footer />
     </div>
