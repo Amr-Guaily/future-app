@@ -14,7 +14,7 @@ const Landing = () => {
         <AOSWrapper>
           <div
             data-aos="zoom-in-up"
-            className="flex flex-col items-center justify-center"
+            className="flex flex-col items-center justify-center h-full"
           >
             <h5 className="hero-text">{t.landing.h1}</h5>
             <h1 className="w-[80%] max-w-[720px] tracking-wide sm:leading-10 lg:leading-[4rem] text-center text-xl sm:text-3xl lg:text-5xl font-bold sm:my-4">

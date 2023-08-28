@@ -1,6 +1,7 @@
 import { TranslateProvidor } from '../context/translate-api';
 import Layout from '../components/Layout/Layout';
 
+import 'aos/dist/aos.css';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
