@@ -61,7 +61,10 @@ const ContactForm = () => {
 
   return (
     <AOSWrapper>
-      <div data-aos={`fade-${t.aos}`} className="md:w-1/2">
+      <div
+        data-aos={`fade-${t.direction == 'ltr' ? 'left' : 'right'}`}
+        className="md:w-1/2"
+      >
         <div className="flex items-center gap-3">
           <div className="bg-secondary py-0.5 pl-0.5">
             <Image

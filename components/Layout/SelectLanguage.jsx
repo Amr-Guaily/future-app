@@ -14,7 +14,7 @@ const SelectLanguage = () => {
     <select
       onChange={changeLanguage}
       defaultValue={router.locale}
-      className="select-lang hidden md:block"
+      className="select-lang hidden md:block cursor-pointer"
     >
       <option className="text-black" value="en">
         EN

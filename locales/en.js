@@ -1,6 +1,5 @@
 export default {
   direction: "ltr",
-  aos: "left",
   companyName: "Buruq Future",
   home: "Home",
   about: "About US",

@@ -1,6 +1,5 @@
 export default {
   direction: "rtl",
-  aos: "right",
   companyName: "بروق المستقبل",
   home: "الصفحة الرئيسية",
   about: "معلومات عنا",

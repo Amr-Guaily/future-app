@@ -1,6 +1,8 @@
 import { useTranslate } from '../../context/translate-api';
 import Image from 'next/image';
 
+import AOSWrapper from '../AOSWrapper';
+
 const Services = () => {
   const t = useTranslate();
   return (
@@ -13,49 +15,61 @@ const Services = () => {
       </div>
 
       <div className="container !px-0 flex flex-col md:flex-row gap-4 lg:gap-6 mt-5 sm:mt-10">
-        <div className="service-item lg:mt-[2.5rem]">
-          <Image
-            src="/assets/svg/service-1.png"
-            height={60}
-            width={60}
-            className="object-contain"
-          />
-          <h4>New Builds Electrical Contractors</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-            maiores quia beatae! Labore ducimus ratione quia praesentium harum,
-            facilis distinctio.
-          </p>
-        </div>
+        <AOSWrapper>
+          <div
+            data-aos={`fade-${t.direction == 'ltr' ? 'right' : 'left'}`}
+            className="service-item lg:mt-[2.5rem]"
+          >
+            <Image
+              src="/assets/svg/service-1.png"
+              height={60}
+              width={60}
+              className="object-contain"
+            />
+            <h4>New Builds Electrical Contractors</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+              maiores quia beatae! Labore ducimus ratione quia praesentium
+              harum, facilis distinctio.
+            </p>
+          </div>
+        </AOSWrapper>
 
-        <div className="service-item lg:h-fit">
-          <Image
-            src="/assets/svg/service-2.png"
-            height={60}
-            width={60}
-            className="object-contain"
-          />
-          <h4>New Builds Electrical Contractors</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-            maiores quia beatae! Labore ducimus ratione quia praesentium harum,
-            facilis distinctio.
-          </p>
-        </div>
+        <AOSWrapper>
+          <div data-aos="fade-up" className="service-item lg:h-fit">
+            <Image
+              src="/assets/svg/service-2.png"
+              height={60}
+              width={60}
+              className="object-contain"
+            />
+            <h4>New Builds Electrical Contractors</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+              maiores quia beatae! Labore ducimus ratione quia praesentium
+              harum, facilis distinctio.
+            </p>
+          </div>
+        </AOSWrapper>
 
-        <div className="service-item lg:mt-[2.5rem]">
-          <Image
-            src="/assets/svg/service-3.png"
-            height={60}
-            width={60}
-            className="object-contain"
-          />
-          <h4>New Builds Electrical Contractors</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-            maiores quia beatae! Labore ducimus ratione quia praesentium.
-          </p>
-        </div>
+        <AOSWrapper>
+          <div
+            data-aos={`fade-${t.direction == 'ltr' ? 'left' : 'right'}`}
+            className="service-item lg:mt-[2.5rem]"
+          >
+            <Image
+              src="/assets/svg/service-3.png"
+              height={60}
+              width={60}
+              className="object-contain"
+            />
+            <h4>New Builds Electrical Contractors</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+              maiores quia beatae! Labore ducimus ratione quia praesentium.
+            </p>
+          </div>
+        </AOSWrapper>
       </div>
     </div>
   );
