@@ -3,6 +3,7 @@ import AboutUs from "../components/Home/AboutUS";
 import Statistics from "../components/Home/Statistics";
 import ContactUs from "../components/Home/ContactUs";
 import FixedBanner from "../components/Home/FixedBanner";
+import Services from "../components/Home/Services";
 
 export default function Home() {
   console.log("HOME [Re-rendered..]");
@@ -11,6 +12,8 @@ export default function Home() {
     <Landing />
 
     <AboutUs />
+
+    <Services />
 
     <Statistics />
 

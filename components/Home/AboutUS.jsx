@@ -12,9 +12,7 @@ const AboutUs = () => {
     <div className="s-block flex flex-col-reverse md:flex-row gap-6 lg:gap-10">
       <AOSWrapper>
         <div data-aos="fade-right" className="flex flex-col md:w-[55%] px-3">
-          <span className="text-secondary font-bold text-lg lg:text-xl">
-            {t.aboutUS.h1}
-          </span>
+          <span className="sub-title">{t.aboutUS.h1}</span>
           <h3 className="text-primary text-2xl lg:text-4xl font-bold mt-3">
             {t.aboutUS.h2}
           </h3>

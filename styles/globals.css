@@ -63,6 +63,9 @@ body::-webkit-scrollbar-thumb {
   text-overflow: ellipsis;
   -webkit-line-clamp: 3; /* change this value to adjust number of lines */
 }
+.sub-title {
+  @apply text-secondary font-bold text-lg lg:text-xl;
+}
 
 /* ## NAvbar - CSS ## */
 nav.sticky-nav {
@@ -206,6 +209,16 @@ li.feature-li {
 }
 .statistics-item p {
   @apply text-gray-600 font-semibold text-xs md:text-base;
+}
+.service-item {
+  @apply bg-white shadow-md p-4 transition-all duration-300 border-[2.5px] border-white hover:rounded hover:border-secondary;
+  > h4 {
+    @apply text-lg lg:text-xl font-semibold text-primary mt-4;
+  }
+
+  > p {
+    @apply font-semibold text-sm text-slate-800 tracking-wide my-3 transition-all duration-150;
+  }
 }
 .banner {
   background-image: url(/assets/bg-2.jpg);

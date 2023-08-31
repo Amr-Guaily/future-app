@@ -10,9 +10,7 @@ const ContactUs = () => {
     <div className="s-block flex gap-8 md:gap-12 flex-col md:flex-row">
       <AOSWrapper>
         <div data-aos="fade-up" className="md:w-1/2">
-          <span className="text-secondary font-bold text-lg lg:text-xl">
-            {t.contactUs.h1}
-          </span>
+          <span className="sub-title">{t.contactUs.h1}</span>
           <h3 className="text-primary text-2xl lg:text-4xl font-bold mt-3">
             {t.contactUs.h2}
           </h3>
