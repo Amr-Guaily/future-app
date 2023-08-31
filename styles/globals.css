@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600&family=Montserrat:wght@500;600&family=Old+Standard+TT:ital@1&display=swap');
-@import '~aos/dist/aos.css';
 
 @tailwind base;
 @tailwind components;
@@ -160,7 +159,7 @@ nav {
 
 /* Footer - CSS */
 .quick-link {
-  @apply hover:ps-3 transition-all duration-200 w-fit;
+  @apply hover:ps-3 transition-all duration-200 w-fit whitespace-nowrap;
 }
 .footer-title {
   @apply text-secondary font-semibold text-xl mb-3 tracking-wider;

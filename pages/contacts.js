@@ -1,14 +1,11 @@
-import { useTranslate } from "../context/translate-api";
+import ContactUs from "../components/Home/ContactUs";
 
 export default function Contacts() {
-    const t = useTranslate();
 
-    console.log("HOME [Re-rendered..]");
+    console.log("ContactUS [Re-rendered..]");
     return (
         <>
-            <div>
-                {t.heroHome}
-            </div>
+            <ContactUs />
         </>
     );
 }

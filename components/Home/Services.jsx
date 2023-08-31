@@ -24,6 +24,7 @@ const Services = () => {
               src="/assets/svg/service-1.png"
               height={60}
               width={60}
+              alt="Service-1-image"
               className="object-contain"
             />
             <h4>New Builds Electrical Contractors</h4>
@@ -41,6 +42,7 @@ const Services = () => {
               src="/assets/svg/service-2.png"
               height={60}
               width={60}
+              alt="Service-2-image"
               className="object-contain"
             />
             <h4>New Builds Electrical Contractors</h4>
@@ -61,6 +63,7 @@ const Services = () => {
               src="/assets/svg/service-3.png"
               height={60}
               width={60}
+              alt="Service-3-image"
               className="object-contain"
             />
             <h4>New Builds Electrical Contractors</h4>
