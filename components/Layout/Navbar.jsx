@@ -50,7 +50,7 @@ const Navbar = ({ activeSidebar }) => {
             {t.services.title} <FaAngleDown className=" inline-block" />
             <div className="sub-menu">
               <Navlink
-                href="#"
+                href="/services/telecommunicationServices"
                 activeClass="active-link"
                 normalClass="nav-link"
               >

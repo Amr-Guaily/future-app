@@ -49,7 +49,7 @@ const Sidebar = ({ setIsActive }) => {
           {isActiveSubmenu && (
             <div className="sub-menu-sidebar">
               <Navlink
-                href="#"
+                href="/services/telecommunicationServices"
                 activeClass="active-link-sidebar"
                 normalClass="nav-link-sidebar"
               >

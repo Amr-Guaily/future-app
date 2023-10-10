@@ -7,7 +7,7 @@ export default {
   readMore: "المزيد",
   services: {
     title: "خدماتنا",
-    service_1: "الخدمة الأولي",
+    service_1: "خدمات الاتصالات",
     service_2: "الخدمة الثانية",
     service_3: "الخدمة الثالثة",
   },

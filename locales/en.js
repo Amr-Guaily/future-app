@@ -7,7 +7,7 @@ export default {
   readMore: "read more",
   services: {
     title: "Our Services",
-    service_1: "service_1",
+    service_1: "Telecommunication Services",
     service_2: "service_2",
     service_3: "service_3",
   },
